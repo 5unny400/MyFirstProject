@@ -77,14 +77,16 @@ public class 源码分析 {
         Person p = new Person();
         p.printGetClass();
 
-//        ArrayList;
-//        AbstractMap;
+
+//
 //        Hashtable;
-//        HashMap;
 //        Properties;
-//        Vector;
-//        LinkedList;
-//        Iterable;
+//
+//        AbstractMap;
+        TreeMap treeMap;
+        HashMap hashMap;
+        LinkedHashMap linkedHashMap;
+
 
     }
 }

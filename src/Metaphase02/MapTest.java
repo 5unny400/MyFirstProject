@@ -187,7 +187,7 @@ class MyHashMap<K, V> {
                     highListTail = currentNode;
                 } else {
                     highListTail.next = currentNode;
-                    highListTail = lowListTail.next;
+                    highListTail = highListTail.next;
                 }
             }
             currentNode = currentNode.next;
