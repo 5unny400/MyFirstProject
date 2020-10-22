@@ -8,7 +8,7 @@ import java.util.SortedMap;
 /**
  *
  */
-public class IoTest02 {
+public class TypeOfEncode {
     public static void main(String[] args) {
         //得到系统默认的编码方式
         Charset charset = Charset.defaultCharset();

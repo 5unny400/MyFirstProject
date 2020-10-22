@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class IoTest03e {
+public class WriteInFile {
     public static void main(String[] args) throws IOException {
-        /*File file = new File("./test03.txt");
+        File file = new File("./test03.txt");
         if(!file.exists()){
             file.createNewFile();
         }
@@ -17,6 +17,6 @@ public class IoTest03e {
         byte[] bytesArray = someThing.getBytes();
         fileOutputStream.write(bytesArray);
         fileOutputStream.flush();
-        System.out.println("File Written Successfully");*/
+        System.out.println("File Written Successfully");
     }
 }

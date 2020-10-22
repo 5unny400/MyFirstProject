@@ -23,7 +23,8 @@ import java.util.Arrays;
  *  boolean isHidden  判断当前路径是否是隐藏文件
  *  boolean delete 直接删除当前文件
  *  boolean createNewFile 创建新文件
- *  file.mkdir 创建目录
+ *  file.mkdir() 创建单层目录
+ *  file.mkdirs() 创建多层目录
  *  file.getAbsolutePath  获取文件的绝对路径
  *  file.list 获取当前路径下的所有文件
  *  file.getName 获取文件名
