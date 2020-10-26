@@ -2,7 +2,10 @@ package Metaphase06;
 
 import java.io.*;
 
-public class Demo11 {
+/**
+ * 未经测试
+ */
+public class byteInputStream {
     public static void main(String[] args) throws IOException {
         String fileName = "D:\\program\\ProgramOfIdea\\MyJavaStudy2\\src\\Metaphase06\\test01.jpg";
         String fileName2 = "D:\\program\\ProgramOfIdea\\MyJavaStudy2\\src\\Metaphase06\\result01.jpg";
@@ -39,9 +42,9 @@ public class Demo11 {
         System.out.println("2正在读取复制......");
         byte[] tmpByte = new byte[1024];
         int byteRead = 0;
-        Demo11.showAvailableBytes(fileInputStream2);
+        byteInputStream.showAvailableBytes(fileInputStream2);
         while ((byteRead = fileInputStream2.read(tmpByte)) != -1) {
-            fileOutputStream.write(tmpByte,0,byteRead);
+            fileOutputStream2.write(tmpByte,0,byteRead);
         }
         fileInputStream2.close();
         fileOutputStream2.close();

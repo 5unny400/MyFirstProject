@@ -21,6 +21,7 @@ public class AgainstPoland2 {
         this.arr = arr;
     }
 
+    //返回运算符的优先级
     public static int getPriority(char ch) {
         if (ch == '+' || ch == '-')
             return 1;
@@ -38,8 +39,9 @@ public class AgainstPoland2 {
         getResult();     //
     }
 
+    //开始计算后缀表达式
     private void getResult() {
-        //开始计算后缀表达式
+
         Stack st = new Stack(); //用于计算的临时栈
         for (int i = 0; i < j; i++) {
             int tem = 0;
@@ -68,9 +70,9 @@ public class AgainstPoland2 {
         st.pop();
     }
 
+    //中缀表达式得到后缀表达式，运算符的优先级
+    //利用栈
     private void change() {
-        //中缀表达式得到后缀表达式，运算符的优先级
-        //利用栈
 
         String temq = "";
         boolean label = false;
@@ -119,6 +121,8 @@ public class AgainstPoland2 {
                     stack.pop();
                 }
                 stack.push(arr[i]);     //将运算符入栈自然处理下一个字符
+            }else{
+                throw new UnsupportedOperationException("The given operator can not satisfy this appliance!");
             }
         }
 
@@ -134,7 +138,7 @@ public class AgainstPoland2 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("请输入运算式(输入括号伪英文括号)：");
+        System.out.println("请输入运算式(输入括号伪英文括号,尽量不要有空格)：");
         String str = scan.nextLine();
 
         //中缀表达式：9+(3-1)*3+10/2
