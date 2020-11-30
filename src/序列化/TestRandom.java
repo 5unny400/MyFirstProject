@@ -49,8 +49,9 @@ public class TestRandom {
 
             System.out.println();
             String str = "西安图论科技有限公司";
-            System.out.println(str+" 已写入文件！");
+
             randomFile.write(str.getBytes());
+            System.out.println(str+" 已写入文件！");
 
             //输出验证是否插入成功
             randomFile.seek(beginIndex);

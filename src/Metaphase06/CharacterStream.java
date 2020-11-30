@@ -1,10 +1,8 @@
 package Metaphase06;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
+import java.util.Arrays;
 
 /**
  * 字符流 读写字符的IO流
@@ -28,10 +26,10 @@ public class CharacterStream {
 
     public static void main(String[] args) throws IOException {
         readInFile();
-        writeInFile();
+        //writeInFile();
 
 
-        copy();
+        //copy();
     }
 
     private static void copy() {
@@ -67,9 +65,12 @@ public class CharacterStream {
     }
 
     public static void readInFile() throws IOException {
+        String fileName = "test03.txt";
+
         FileReader fileReader = null;
         try {
-            fileReader = new FileReader("test03.txt");
+            System.out.println("一次读取单个字符：");
+            fileReader = new FileReader(fileName);
             int tmp=-1; //实际是去存储四个字节
 
             Charset charset = Charset.defaultCharset();
@@ -78,13 +79,34 @@ public class CharacterStream {
             while((tmp = fileReader.read())!=-1){
                 System.out.print((char)tmp);
             }
-        }catch (FileNotFoundException e){
+
+            System.out.println();
+            System.out.println("一次读取多个字符：");
+            Reader reader = null;
+            char[] tempchars = new char[9];
+            reader = new InputStreamReader(new FileInputStream(fileName));
+            while ((tmp = reader.read(tempchars)) != -1) {
+                // 同样屏蔽掉\r不显示
+
+                if ((tmp == tempchars.length) && (tempchars[tempchars.length - 1] != '\r')) {
+                    System.out.print(tempchars);
+                } else {
+                    for (int i = 0; i < tmp; i++) {
+                        if (tempchars[i] == '\r') {
+                            continue;
+                        } else {
+                            System.out.print(tempchars[i]);
+                        }
+                    }
+                }
+            }
+            reader.close();
+        } catch (IOException e){
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally{
+        } finally{
             //关闭流对象
             fileReader.close();
+
         }
     }
 
