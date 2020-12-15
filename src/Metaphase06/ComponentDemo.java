@@ -11,7 +11,7 @@ interface Component{
     void method();
 }
 
-//被装饰的类 FileInputStream
+//被装饰的类
 class ConcreteComponent implements Component {
 
     @Override
@@ -71,5 +71,12 @@ class ConcreteDecorateB extends Decorate{
 public class ComponentDemo {
     public static void main(String[] args) {
         BufferedInputStream bufferedInputStream;
+        Component component = null;
+        ConcreteDecorateA concreteDecorateA = new ConcreteDecorateA(component);
+        concreteDecorateA.method();
+        concreteDecorateA.methodA();
+        ConcreteDecorateB concreteDecorateB = new ConcreteDecorateB(component);
+        concreteDecorateB.method();
+        concreteDecorateB.methodB();
     }
 }

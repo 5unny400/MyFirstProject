@@ -6,7 +6,7 @@ import java.io.ObjectInputStream;
 
 public class DeserializeDemo {
     public static void main(String [] args) {
-        Employee e = null;
+        Employee e;
         try {
             FileInputStream fileIn = new FileInputStream("D:\\program\\ProgramOfIdea\\MyJavaStudy2\\src" +
                     "\\序列化\\mySerialize.txt");
